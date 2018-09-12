@@ -1,0 +1,106 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaSCript Chalenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>=
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<style>
+    /* aside */
+        .asideHide{
+            display: none
+
+        }
+        .asideShow{
+            display: block;
+            height: 100%;
+            width: 20%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            animation-name:asideIn;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+
+        }
+        .MobileBtn{
+            display: none;
+        }
+        .asideShow a {
+            padding: 6px 30px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;            
+        }
+      
+
+        @keyframes asideIn{
+            0%{ width: 0%;}
+            100%{width: 20%;}
+
+        }
+        
+        /*main content*/
+
+        .mainFull {
+           width: 100%;
+           animation-name:mainToFull;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .mainMin{
+            width: 80%;
+            float: right;
+            animation-name:mainToMin;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mainToMin{
+            0%{ width: 100%;}
+            100%{width: 80%;}
+        }
+
+
+         @media only screen and (max-width: 760px){
+            .MobileBtn{
+            display: block;
+        }
+         }
+
+        
+        </style>
+
+        </head>
+        <body>
+        
+        <nav id="bar" class="asideHide">
+          <a href="#">fisrt</a>
+          <a href="#">second </a>
+          <a href="#">third</a>
+          <button class="MobileBtn"><i class="fas fa-times"></i></button>
+        </nav>
+        
+        <div id="main" class="mainFull">
+
+        <button id="btn"><i class="fas fa-bars"></i></button>
+          <h2>Ahmad Abdulkhaliq Osman</h2>
+          <p>Web Developer </p>
+        </div>
+        
+             <script>
+             document.getElementById("btn").addEventListener("click", function(){
+    document.getElementById("bar").classList.toggle("asideShow");
+    document.getElementById("main").classList.toggle("mainMin");
+
+});
+             </script>
+        </body>
+</html>
